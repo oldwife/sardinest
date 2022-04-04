@@ -59,6 +59,11 @@ int allowwindowops = 0;
 static double minlatency = 8;
 static double maxlatency = 33;
 
+/*
+ * Synchronized-Update timeout in ms
+ * https://gitlab.com/gnachman/iterm2/-/wikis/synchronized-updates-spec
+ */
+static uint su_timeout = 200;
 
 /*
  * blinking timeout (set to 0 to disable blinking) for the terminal blinking
@@ -246,8 +251,6 @@ static Shortcut shortcuts[] = {
 	{ MODKEY,               XK_equal,       zoomreset,       {.f =  0} },
 	{ MODKEY,               XK_c,           clipcopy,        {.i =  0} },
 	{ MODKEY,               XK_v,           clippaste,       {.i =  0} },
-	{ TERMMOD,              XK_Y,           selpaste,        {.i =  0} },
-	{ ShiftMask,            XK_Insert,      selpaste,        {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,         {.i =  0} },
 };
 
